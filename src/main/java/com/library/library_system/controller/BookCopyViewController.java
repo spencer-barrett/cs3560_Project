@@ -222,9 +222,15 @@ public class BookCopyViewController {
             if (deleted) {
                 bookCopyList.remove(selected);
             } else {
-                showAlert("Cannot delete book copy: It may be on loan.");
-            }
 
+                // fetch the copy to check its status if it is borrowed or has loan history
+                BookCopy freshCopy = bookCopyService.readBookCopy(selected.getCopyId());
+                if (freshCopy != null && freshCopy.isBorrowed()) {
+                    showAlert("Cannot delete book copy: It is currently on loan.");
+                } else {
+                    showAlert("Cannot delete book copy: It has loan history and cannot be removed.");
+                }
+            }
         // handle errors
         } catch (Exception e) {
             showAlert("Error deleting book copy: " + e.getMessage());

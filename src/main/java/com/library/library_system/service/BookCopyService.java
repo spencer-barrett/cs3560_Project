@@ -80,6 +80,17 @@ public class BookCopyService {
                 return false;
             }
 
+            // check for loan history
+            Query<Long> loanCountQuery = session.createQuery(
+                "SELECT COUNT(l) FROM Loan l JOIN l.bookCopies bc WHERE bc.copyId = :id",
+                Long.class);
+            loanCountQuery.setParameter("id", copyId);
+            Long loanCount = loanCountQuery.uniqueResult();
+            if (loanCount != null && loanCount > 0) {
+                System.out.println("Cannot delete: This copy has loan history.");
+                return false;
+            }
+
             tx = session.beginTransaction();
             session.remove(copy);
             tx.commit();
