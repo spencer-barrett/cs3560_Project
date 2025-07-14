@@ -34,7 +34,9 @@ public class Book {
     public Book() {}
     
     
-    
+    /*
+	 * Returns a list of available book copies
+	 */
     public List<BookCopy> getAvailableCopies(){
     	return copies.stream()
     			.filter(copy -> !copy.isBorrowed())
@@ -42,7 +44,9 @@ public class Book {
     }
     
 
-
+	/*
+	 * Returns the total number of book copies
+	 */
     public int getTotalCopies() {
     	return copies.size();
     }
