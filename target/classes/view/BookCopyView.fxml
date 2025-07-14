@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.library.library_system.controller.BookCopyViewController"
+      spacing="10" alignment="TOP_CENTER"
+      stylesheets="@styles.css">
+    <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+        <Button text="Home" onAction="#goToHome"/>
+        <Button text="Student Management" onAction="#goToStudent"/>
+        <Button text="Loan Management" onAction="#goToLoan"/>
+        <Button text="Book Management" onAction="#goToBook"/>
+        <Button text="Book Copy Management" fx:id="bookCopyNavButton" onAction="#goToBookCopy"/>
+    </HBox>
+    <Label text="Book Copy Management" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+       <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 10 0 10;">
+        <ComboBox fx:id="bookComboBox" promptText="Book (Title/ISBN)" prefWidth="150"/>
+        <TextField fx:id="barcodeField" promptText="Bar Code"/>
+        <TextField fx:id="locationField" promptText="Location"/>
+        <ComboBox fx:id="statusComboBox" promptText="Status"/>
+    </HBox>
+    <StackPane VBox.vgrow="ALWAYS">
+        <TableView fx:id="bookCopyTable">
+            <columns>
+                <TableColumn text="Copy ID" fx:id="copyIdColumn" prefWidth="70" />
+                <TableColumn text="Book Title" fx:id="bookTitleColumn" prefWidth="180" />
+                <TableColumn text="Book ISBN" fx:id="bookIsbnColumn" prefWidth="130" />
+                <TableColumn text="Bar Code" fx:id="barcodeColumn" prefWidth="100" />
+                <TableColumn text="Location" fx:id="locationColumn" prefWidth="100" />
+                <TableColumn text="Status" fx:id="statusColumn" prefWidth="100" />
+                <TableColumn text="Due Date" fx:id="dueDateColumn" />
+            </columns>
+        </TableView>
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" maxWidth="50" maxHeight="50"/>
+    </StackPane>
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 0 30 0;">
+        <Button text="Add" fx:id="addButton" onAction="#handleAdd"/>
+        <Button text="Update" fx:id="editButton" onAction="#handleEdit"/>
+        <Button text="Delete" fx:id="deleteButton" onAction="#handleDelete"/>
+    </HBox>
+</VBox>

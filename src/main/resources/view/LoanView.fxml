@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.library.library_system.controller.LoanViewController"
+      spacing="10" alignment="TOP_CENTER"
+      stylesheets="@styles.css">
+       <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+        <Button text="Home" onAction="#goToHome"/>
+        <Button text="Student Management" onAction="#goToStudent"/>
+        <Button text="Loan Management" fx:id="loanNavButton" onAction="#goToLoan"/>
+        <Button text="Book Management" onAction="#goToBook"/>
+        <Button text="Book Copy Management" onAction="#goToBookCopy"/>
+    </HBox>
+    <Label text="Loan Management" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <HBox spacing="10" alignment="CENTER">
+        <ComboBox fx:id="studentComboBox" promptText="Student"/>
+        <DatePicker fx:id="borrowDatePicker" promptText="Borrow Date"/>
+        <DatePicker fx:id="dueDatePicker" promptText="Due Date"/>
+    </HBox>
+    <HBox spacing="20" alignment="CENTER">
+        <VBox>
+            <Label text="Available Book Copies" />
+            <TableView fx:id="bookCopyTable" prefHeight="120" prefWidth="300" >
+                <columns>
+                    <TableColumn text="Barcode" fx:id="barcodeColumn" />
+                    <TableColumn text="Location" fx:id="locationColumn" />
+                    <TableColumn text="Available" fx:id="availableColumn" />
+                </columns>
+            </TableView>
+        </VBox>
+        <VBox alignment="CENTER" spacing="10">
+            <Button text="Add to Loan" fx:id="addCopyButton" onAction="#handleAddCopyToLoan" />
+            <Button text="Remove from Loan" fx:id="removeCopyButton" onAction="#handleRemoveCopyFromLoan" />
+        </VBox>
+        <VBox>
+            <Label text="Selected for Loan" />
+            <TableView fx:id="selectedBookCopyTable" prefHeight="120" prefWidth="300" >
+                <columns>
+                    <TableColumn text="Barcode" fx:id="selectedBarcodeColumn" />
+                    <TableColumn text="Location" fx:id="selectedLocationColumn" />
+                    <TableColumn text="Available" fx:id="selectedAvailableColumn" />
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Create Loan" fx:id="createLoanButton" onAction="#handleCreateLoan"/>
+        <Button text="Return Loan" fx:id="returnLoanButton" onAction="#handleReturnLoan"/>
+        <Button text="Show Receipt" fx:id="showReceiptButton" onAction="#handleShowReceipt"/>
+        <Button text="Delete Loan" fx:id="deleteLoanButton" onAction="#handleDeleteLoan"/>
+    </HBox>
+    <TableView fx:id="loanTable" prefHeight="150" prefWidth="600">
+        <columns>
+            <TableColumn text="Loan ID" fx:id="loanIdColumn" prefWidth="70"/>
+            <TableColumn text="Student" fx:id="loanStudentColumn" prefWidth="120"/>
+            <TableColumn text="Borrow Date" fx:id="loanBorrowDateColumn" prefWidth="120"/>
+            <TableColumn text="Due Date" fx:id="loanDueDateColumn" prefWidth="120"/>
+            <TableColumn text="Returned" fx:id="loanReturnedColumn" prefWidth="80"/>
+        </columns>
+    </TableView>
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Generate Loan Report" fx:id="generateReportButton" onAction="#handleGenerateReport"/>
+    </HBox>
+    
+</VBox>

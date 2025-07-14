@@ -1,0 +1,7 @@
+.nav-active {
+    -fx-background-color: #429ef5;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+} 

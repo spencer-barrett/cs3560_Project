@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.library.library_system.controller.BookViewController"
+      spacing="10" alignment="TOP_CENTER"
+      stylesheets="@styles.css">
+    <HBox spacing="10" alignment="CENTER" style="-fx-background-color: #f0f0f0; -fx-padding: 10;">
+        <Button text="Home" onAction="#goToHome"/>
+        <Button text="Student Management" onAction="#goToStudent"/>
+        <Button text="Loan Management" onAction="#goToLoan"/>
+        <Button text="Book Management" fx:id="bookNavButton" onAction="#goToBook"/>
+        <Button text="Book Copy Management" onAction="#goToBookCopy"/>
+    </HBox>
+    <Label text="Book Management" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 10 0 10;">
+        <TextField fx:id="isbnField" promptText="ISBN"/>
+        <TextField fx:id="titleField" promptText="Title"/>
+        <TextField fx:id="authorsField" promptText="Authors"/>
+        <TextField fx:id="publisherField" promptText="Publisher"/>
+        <TextField fx:id="pagesField" promptText="Number of Pages"/>
+        <DatePicker fx:id="publicationDateField" promptText="Publication Date"/>
+        <TextField fx:id="descriptionField" promptText="Description"/>
+    </HBox>
+    <StackPane VBox.vgrow="ALWAYS">
+        <TableView fx:id="bookTable">
+            <columns>
+                <TableColumn text="Book ID" fx:id="bookIdColumn" prefWidth="50" />
+                <TableColumn text="ISBN" fx:id="isbnColumn" prefWidth="100" />
+                <TableColumn text="Title" fx:id="titleColumn" prefWidth="140" />
+                <TableColumn text="Authors" fx:id="authorsColumn" prefWidth="110" />
+                <TableColumn text="Publisher" fx:id="publisherColumn" prefWidth="100" />
+                <TableColumn text="Pages" fx:id="pagesColumn" prefWidth="50" />
+                <TableColumn text="Publication Date" fx:id="publicationDateColumn" />
+                <TableColumn text="Description" fx:id="descriptionColumn" minWidth="140"/>
+            </columns>
+        </TableView>
+        <ProgressIndicator fx:id="loadingIndicator" visible="false" maxWidth="50" maxHeight="50"/>
+    </StackPane>
+    <HBox spacing="10" alignment="CENTER" style="-fx-padding: 0 0 30 0;">
+        <Button text="Add" fx:id="addButton" onAction="#handleAdd"/>
+        <Button text="Update" fx:id="editButton" onAction="#handleEdit"/>
+        <Button text="Delete" fx:id="deleteButton" onAction="#handleDelete"/>
+    </HBox>
+</VBox>

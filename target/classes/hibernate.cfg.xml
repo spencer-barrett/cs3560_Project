@@ -1,0 +1,22 @@
+<hibernate-configuration>
+    <session-factory>
+    <!-- JDBC Database connection settings -->
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.url">jdbc:postgresql://localhost:5432/library_db</property>
+    <property name="connection.username">postgres</property>
+    <property name="connection.password">Bioware-23</property>
+    <!-- JDBC connection pool settings ... using built-in test pool -->
+    <property name="connection.pool_size">5</property>
+    <!-- Select our SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+     <property name="hibernate.hbm2ddl.auto">update</property>
+         <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.format_sql">true</property>
+
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="com.library.library_system.model.Student"/>
+    <mapping class="com.library.library_system.model.Loan"/>
+    <mapping class="com.library.library_system.model.BookCopy"/>
+    <mapping class="com.library.library_system.model.Book"/>
+    </session-factory>
+    </hibernate-configuration>

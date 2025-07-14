@@ -1,0 +1,16 @@
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\App.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\controller\BookCopyViewController.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\controller\BookViewController.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\controller\LoanViewController.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\controller\StudentViewController.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\controller\WelcomeViewController.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\MainApp.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\model\Book.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\model\BookCopy.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\model\Loan.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\model\Student.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\service\BookCopyService.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\service\BookService.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\service\LoanService.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\service\StudentService.java
+C:\Users\barre\eclipse-workspace\library-system\src\main\java\com\library\library_system\util\SessionFactoryProvider.java
